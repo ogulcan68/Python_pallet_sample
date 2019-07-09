@@ -1,2 +1,2 @@
-# Python_pallet_sample
+# python simple pallet project
 Basic level platter project
