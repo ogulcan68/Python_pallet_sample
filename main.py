@@ -10,6 +10,7 @@ while True:
         singer = input("singer -->")
         song_type = input("song type -->")
         year = int(input("year -->"))
+        connect.cursor()
         cur.execute('''INSERT INTO platter VALUES (?,?,?,?)''', (song_name, singer, song_type, year))
         cur.execute("select * from platter")
         for i in cur.fetchall():
@@ -18,13 +19,14 @@ while True:
         print("succes")
         cur.close()
         input("enter to homepage")
-    if a == "2":
+    elif a == "2":
         song_name = input("song name -->")
         singer = input("singer -->")
         song_type = input("song type -->")
         year = int(input("year -->"))
         ques = input("if u sure enter 1")
         if ques == "1":
+            connect.cursor()
             cur.execute('''DELETE FROM platter WHERE songname = ? ''',(song_name,))
             connect.commit()
             print("succ")
